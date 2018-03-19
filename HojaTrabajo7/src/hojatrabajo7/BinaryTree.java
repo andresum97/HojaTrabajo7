@@ -53,13 +53,13 @@ public class BinaryTree<E extends Comparable<E>>{
              actual = actual.left;
              if(actual==null){
                  parent.left = temp;
-                 //return;
+                 return;
              }
          }else{
              actual = actual.right;
              if(actual==null){
                  parent.right= temp;
-                 //return;
+                 return;
              }
          }
       }
@@ -194,14 +194,14 @@ public class BinaryTree<E extends Comparable<E>>{
         return sucesor;
     }
     /**
-     * Muestra los nodos del arbol
+     * Muestra los nodos del arbol en formato Inorder
      * @param nodo nodo a mostrar
      */
-    public void mostrar(Nodo<E> nodo){
+    public void mostrarInorder(Nodo<E> nodo){
         if(nodo!= null){
-            mostrar(nodo.left);
+            mostrarInorder(nodo.left);
             System.out.print(nodo.ele+" ");
-            mostrar(nodo.right);
+            mostrarInorder(nodo.right);
         }
     }
 }
